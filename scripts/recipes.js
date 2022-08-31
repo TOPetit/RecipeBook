@@ -13,4 +13,4 @@ function load_recipes(names) {
     }
 }
 
-load_recipes();
+load_recipes(recipes_names);
