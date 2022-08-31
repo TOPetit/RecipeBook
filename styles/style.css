@@ -1,0 +1,26 @@
+* {
+    --main-bg-color: #0d160e;
+    --main-font-color: #cbdbd5;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-font-color);
+    justify-content: center;
+    display: flex;
+}
+
+@keyframes blurred {
+    0%   {filter: blur(10px); color: var(--main-bg-color);}
+    50%  {filter: blur(10px); color: var(--main-bg-color);}
+    75%  {filter: blur(5px);}
+    100% {filter: blur(0px); color: var(--main-font-color);}
+}
+
+body>h1 {
+    margin: auto;
+    padding: 20px;
+    font-size: 5em;
+    animation-name: blurred;
+    animation-duration: 1.5s;
+}
