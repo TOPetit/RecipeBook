@@ -8,6 +8,7 @@ var recipes_names = [
 var recipes = [];
 
 function load_recipes(names) {
+    debugger;
     for (i = 0; i < names.length; i++) {
         recipes[i] = names[i];
     }
