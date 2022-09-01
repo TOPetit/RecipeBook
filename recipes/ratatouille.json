@@ -1,0 +1,56 @@
+{
+    "author": "Théo Petit",
+    "date": "01/09/2022",
+    "name": "Ratatouille",
+    "type": "Plat",
+    "serves": 3,
+    "ingredients": [
+        {
+            "Courgette": {
+                "quantity": "1"
+            }
+        },
+        {
+            "Aubergine": {
+                "quantity": "1"
+            }
+        },
+        {
+            "Tomates": {
+                "quantity": "2"
+            }
+        },
+        {
+            "Oignon": {
+                "quantity": "1"
+            }
+        },
+        {
+            "Gousse d'ail": {
+                "quantity": "2"
+            }
+        },
+        {
+            "Bouillon cube végétal": {
+                "quantity": "1"
+            }
+        }
+    ],
+    "condiments": [
+        "Concentré de tomate",
+        "Cumin",
+        "Sel",
+        "Poivre",
+        "Huile d'olive"
+    ],
+    "instructions": [
+        "Couper en dés l'aubergine, la courgette et les tomates et l'oignon.",
+        "Hacher l'ail.",
+        "Dans une poêle, mettre une cuillère à café d'huile et faire revenir l'ail, l'oignon avec une cuillère à soupe de concentré de tomate en remuant régulièrement.",
+        "Après quelques minutes, ajouter tous les autres légumes.",
+        "Après quelques minutes, mélanger le bouillon cube végétal avec 1/2 litre d'eau et verser le tout dans la poêle.",
+        "Ajouter sel, poivre et cumin à convenance.",
+        "Laisser mijoter sans couvrir jusqu'à réduction.",
+        "Servir chaud avec du riz blanc par exemple."
+    ]
+}
