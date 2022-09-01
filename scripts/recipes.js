@@ -12,7 +12,7 @@ async function fetchRecipe(URL) {
     return await response.json();
 }
 
-console.log(fetchRecipe(BASE_URL + "recipes/"));
+console.log(fetchRecipe(BASE_URL + "recipes/pates-au-beurre.json"));
 
 function load_recipes(names) {
     for (i = 0; i < names.length; i++) {
