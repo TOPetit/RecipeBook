@@ -14,7 +14,7 @@ async function load_recipes(names, func) {
     for (i = 0; i < names.length; i++) {
         let RECIPE_URL = BASE_URL + "recipes/" + names[i] + ".json";
         const response = await fetch(RECIPE_URL);
-        res[i] = await response.json();
+        res[i] = await response.text();
     }
     console.log("Loaded " + names.length + " recipes.");
     func(res);
