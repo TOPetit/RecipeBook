@@ -1,6 +1,7 @@
 // Add entry here to add a recipe
 var recipes_names = [
-    "pates-au-beurre"
+    "pates-au-beurre",
+    "ratatouille"
 ]
 
 async function fetchRecipe(URL) {
