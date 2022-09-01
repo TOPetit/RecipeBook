@@ -21,6 +21,7 @@ function load_recipes(names) {
         let RECIPE_URL = BASE_URL + "recipes" + names[i] + ".json";
         res[i] = fetchRecipe(RECIPE_URL)
     }
+    console.log("Loaded " + names.length + "recipes.");
     return res;
 }
 
