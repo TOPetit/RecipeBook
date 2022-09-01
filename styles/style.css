@@ -24,3 +24,20 @@ body>h1 {
     animation-name: blurred;
     animation-duration: 1.5s;
 }
+
+#recipes-container {
+    margin: auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#recipes-container>.tile {
+    margin: auto;
+    width: 100px;
+    height: 150px;
+    background-color: var(--main-font-color);
+}
