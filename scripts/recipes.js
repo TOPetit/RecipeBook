@@ -3,24 +3,12 @@ var recipes_names = [
     "pates-au-beurre"
 ]
 
-
 // Actual data to use
-var recipes = [];
+var RECIPES = [];
 
-async function fetchRecipe(URL) {
-    const response = await fetch(URL);
-    const recipe = await response.json();
-    return recipe;
+for (i = 0; i < names.length; i++) {
+    let RECIPE_URL = BASE_URL + "recipes/" + names[i] + ".json";
+    const response = await fetch(RECIPE_URL);
+    RECIPES[i] = await response.json();
 }
-
-function load_recipes(names) {
-    let res = [];
-    for (i = 0; i < names.length; i++) {
-        let RECIPE_URL = BASE_URL + "recipes/" + names[i] + ".json";
-        res[i] = fetchRecipe(RECIPE_URL)
-    }
-    console.log("Loaded " + names.length + " recipes.");
-    return res;
-}
-
-var RECIPES = load_recipes(recipes_names);
+console.log("Loaded " + names.length + " recipes.");
