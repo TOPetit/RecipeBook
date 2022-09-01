@@ -13,15 +13,13 @@ async function fetchRecipe(URL) {
     return recipe;
 }
 
-fetchRecipe(BASE_URL + "recipes/pates-au-beurre.json");
-
 function load_recipes(names) {
     let res = [];
     for (i = 0; i < names.length; i++) {
-        let RECIPE_URL = BASE_URL + "recipes" + names[i] + ".json";
+        let RECIPE_URL = BASE_URL + "recipes/" + names[i] + ".json";
         res[i] = fetchRecipe(RECIPE_URL)
     }
-    console.log("Loaded " + names.length + "recipes.");
+    console.log("Loaded " + names.length + " recipes.");
     return res;
 }
 
