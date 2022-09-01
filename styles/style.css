@@ -35,11 +35,10 @@ body>h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
 }
 
 #recipes-container>.tile {
-    margin: auto;
     width: 250px;
     aspect-ratio: 0.8;
     background-color: var(--main-font-color);
