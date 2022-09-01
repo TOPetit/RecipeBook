@@ -9,11 +9,12 @@ async function fetchRecipe(URL) {
     return recipe;
 }
 
-function load_recipes(names, func) {
+async function load_recipes(names, func) {
     let res = [];
     for (i = 0; i < names.length; i++) {
         let RECIPE_URL = BASE_URL + "recipes/" + names[i] + ".json";
-        res[i] = fetchRecipe(RECIPE_URL);
+        const response = await fetch(RECIPE_URL);
+        res[i] = await response.json();
     }
     console.log("Loaded " + names.length + " recipes.");
     func(res);
