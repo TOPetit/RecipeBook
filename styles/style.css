@@ -19,7 +19,9 @@ body {
 
 body>h1 {
     margin: auto;
+    width: 100%;
     padding: 20px;
+    text-align: center;
     font-size: 5em;
     animation-name: blurred;
     animation-duration: 1.5s;
