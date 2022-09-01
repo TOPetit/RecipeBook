@@ -6,8 +6,9 @@
 body {
     background-color: var(--main-bg-color);
     color: var(--main-font-color);
-    justify-content: center;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 @keyframes blurred {
