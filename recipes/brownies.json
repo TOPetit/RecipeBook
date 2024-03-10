@@ -1,0 +1,34 @@
+{
+    "title": "Brownies",
+    "description": "Les meilleurs brownies en moins d'une heure sans équipement particulier.",
+    "date": "10 mars 2024",
+    "prep_time": "15 minutes",
+    "cook_time": "30 minutes",
+    "total_time": "45 minutes",
+    "servings": "9 ou 16 portions (selon la taille des brownies)",
+    "author": "Tessa Arias, Théo Petit",
+    "ingredients": [
+        "71g de beurre doux",
+        "250g de sucre blanc",
+        "2 gros œufs + 1 jaune d'œuf",
+        "1 cuillère à café d'extrait de vanille",
+        "75g de cacao en poudre non sucré",
+        "63g de farine T45",
+        "1/8 de cuillère à café de bicarbonate de soude alimentaire",
+        "1/4 de cuillère à café de sel",
+        "1 cuillère à café de fécule de maïs",
+        "100g de chocolat (noir, au lait, blanc, au caramel, etc...)",
+        "Optionel: 100g de noix, noisettes, amandes, noix de pécan, etc..."
+    ],
+    "instructions": [
+        "Préchauffer le four à 160°C. Disposer une feuille de papier sulfurisé dans le fond d'un moule carré de 20cm, idéalement en métal. Beurrer les côtés du moule.",
+        "Dans un bol, mélanger le beurre et le sucre. Mettre au micro-onde pendant une minute environ (le beurre doit être fondu). Incorporer les œufs et le jaune d'œuf, ainsi que l'extrait de vanille. Fouetter pour obtenir un mélange homogène.",
+        "En mélangeant avec une marise, ajouter le cacao, la farine, le bicarbonate de soude, le sel et la fécule de maïs. Mélanger jusqu'à ce que la pâte soit lisse. Incorporer le chocolat en petits morceaux et les noix si vous en utilisez.",
+        "Etaler la pâte dans le moule préparé. Cuire au four pendant 30 minutes. Un couteau inséré dans le centre doit ressortir avec des miettes humides. Laisser refroidir complètement avant de découper et servir.",
+        "Les brownies se conservent jusqu'à 5 jours dans une boîte hermétique à température ambiante. Ils peuvent également être congelés jusqu'à 3 mois et décongelés à température ambiante ou au micro-onde."
+    ],
+    "notes": [
+        "Le temps de cuisson dépend de l'epaisseur des brownies.",
+        "Servir avec de la glace pour un max de plaisir."
+    ]
+}
