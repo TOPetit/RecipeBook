@@ -12,18 +12,37 @@
 
     body {
       background: black;
-      display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
+      display: flex;
+      flex-direction: column;
     }
 
     canvas {
       border: 1px solid white;
     }
+
+    h1 {
+      color: white;
+      font-size: 2em;
+      text-align: center;
+    }
+
+    h2 {
+      color: lightgray;
+      font-size: 1em;
+      text-align: center;
+      margin-top: -1em;
+      margin-bottom: 2em;
+    }
+
   </style>
 </head>
 
 <body>
+  <h1>Erreur 404</h1>
+  <h2>Gagnez la partie pour accéder à la la page</h2>
   <canvas width="400" height="400" id="game"></canvas>
   <script>
     var canvas = document.getElementById('game');
