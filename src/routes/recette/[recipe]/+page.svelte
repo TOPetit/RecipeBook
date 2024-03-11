@@ -16,45 +16,84 @@
 </script>
 
 {#if recipe}
-    <h1>{recipe.title}</h1>
+    <div class="recipe">
+        <div class="top">
+            <h1>{recipe.title}</h1>
+            <p>{recipe.description}</p>
+        </div>
+        <div class="infos">
+            <dl>
+                <dt>Préparation</dt>
+                <dd>{recipe.prep_time} minutes</dd>
 
-    <p>{recipe.description}</p>
+                <dt>Cuisson</dt>
+                <dd>{recipe.cook_time} minutes</dd>
 
-    <p>Publié le {recipe.date}</p>
+                <dt>Total</dt>
+                <dd>{recipe.total_time} minutes</dd>
 
-    <p>Préparation : {recipe.prep_time}</p>
+                <dt>Portions</dt>
+                <dd>{recipe.servings}</dd>
+            </dl>
+        </div>
 
-    <p>Cuisson : {recipe.cook_time}</p>
+        <div class="ingredients">
+            <h2>Ingrédients</h2>
 
-    <p>Total : {recipe.total_time}</p>
+            <ul>
+                {#each recipe.ingredients as ingredient}
+                    <li>{ingredient}</li>
+                {/each}
+            </ul>
+        </div>
 
-    <p>Pour {recipe.servings}</p>
+        <div class="instructions">
+            <h2>Instructions</h2>
 
-    <p>Par {recipe.author}</p>
+            <ol>
+                {#each recipe.instructions as instruction}
+                    <li>{instruction}</li>
+                {/each}
+            </ol>
+        </div>
+        <div class="notes">
+            <h2>Notes</h2>
 
-    <h2>Ingrédients</h2>
-
-    <ul>
-        {#each recipe.ingredients as ingredient}
-            <li>{ingredient}</li>
-        {/each}
-    </ul>
-
-    <h2>Instructions</h2>
-
-    <ol>
-        {#each recipe.instructions as instruction}
-            <li>{instruction}</li>
-        {/each}
-    </ol>
-
-    <h2>Notes</h2>
-
-    <ul>
-        {#each recipe.notes as note}
-            <li>{note}</li>
-        {/each}
-    </ul>
+            <ul>
+                {#each recipe.notes as note}
+                    <li>{note}</li>
+                {/each}
+            </ul>
+        </div>
+        <div class="footer">
+            <p>{recipe.date}</p>
+        </div>
+    </div>
 {:else}
     <p>Loading...</p>
 {/if}
+
+<style>
+
+    * {
+        font-family: quicksand;
+    }
+    .recipe {
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe > div {
+        background-color: lightblue;
+        margin: 5px;
+    }
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
