@@ -1,6 +1,5 @@
 {
     "$id": "recipe.json",
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Recipe json object",
     "type": "object",
     "properties": {
