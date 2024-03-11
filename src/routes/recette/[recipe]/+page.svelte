@@ -22,19 +22,22 @@
             <p>{recipe.description}</p>
         </div>
         <div class="infos">
-            <dl>
-                <dt>Préparation</dt>
-                <dd>{recipe.prep_time} minutes</dd>
-
-                <dt>Cuisson</dt>
-                <dd>{recipe.cook_time} minutes</dd>
-
-                <dt>Total</dt>
-                <dd>{recipe.total_time} minutes</dd>
-
-                <dt>Portions</dt>
-                <dd>{recipe.servings}</dd>
-            </dl>
+            <div>
+                <p class="bold">Préparation</p>
+                <p class="info-mini">{recipe.prep_time}</p>
+            </div>
+            <div>
+                <p class="bold">Cuisson</p>
+                <p class="info-mini">{recipe.cook_time}</p>
+            </div>
+            <div>
+                <p class="bold">Total</p>
+                <p class="info-mini">{recipe.total_time}</p>
+            </div>
+            <div>
+                <p class="bold">Portions</p>
+                <p class="info-mini">{recipe.servings}</p>
+            </div>
         </div>
 
         <div class="ingredients">
@@ -74,9 +77,12 @@
 {/if}
 
 <style>
-
     * {
         font-family: quicksand;
+    }
+
+    :global(body) {
+        background-color: lightgray;
     }
     .recipe {
         max-width: 1000px;
@@ -87,13 +93,61 @@
     }
 
     .recipe > div {
-        background-color: lightblue;
         margin: 5px;
+        padding: 10px;
     }
 
     .top {
         display: flex;
         flex-direction: column;
         align-items: center;
+        border: 1px solid darkgrey;
+        border-radius: 3px;
     }
+
+    .top > h1 {
+        font-size: 3em;
+        margin-bottom: -10px;
+        margin-top: -10px;
+    }
+
+    .top > p {
+        color: rgb(85, 85, 85);
+    }
+
+    .infos {
+        display: flex;
+        justify-content: center;
+        width: 75%;
+        height: 100px;
+    }
+
+    .infos > div {
+        margin: 15px;
+        width: 15%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(199, 199, 199);
+        border-radius: 3px;
+        box-shadow: 0px 0px 5px 0px rgb(199, 199, 199);
+    }
+
+    .infos > div > p {
+        text-align: center;
+        margin-top: 1px;
+        margin-bottom: 5px;
+    }
+
+    .info-mini {
+        font-size: 0.75em;
+    }
+
+    .bold {
+        font-weight: bold;
+        font-size: 1em;
+    }
+
 </style>
