@@ -1,0 +1,48 @@
+{
+    "$id": "recipe.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Recipe json object",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "date": {
+            "type": "string",
+            "format": "date"
+        },
+        "prep_time": {
+            "type": "string"
+        },
+        "cook_time": {
+            "type": "string"
+        },
+        "total_time": {
+            "type": "string"
+        },
+        "servings": {
+            "type": "string"
+        },
+        "author": {
+            "type": "string"
+        },
+        "ingredients": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "instructions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "notes": {
+            "type": "string"
+        }
+    }
+}
