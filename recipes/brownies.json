@@ -1,7 +1,8 @@
 {
+    "$schema": "https://raw.githubusercontent.com/TOPetit/RecipeBook/main/recipes/schema.json",
     "title": "Brownies",
     "description": "Les meilleurs brownies en moins d'une heure sans équipement particulier.",
-    "date": "10 mars 2024",
+    "date": "2024-03-10",
     "prep_time": "15 minutes",
     "cook_time": "30 minutes",
     "total_time": "45 minutes",
