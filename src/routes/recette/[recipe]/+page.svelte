@@ -53,10 +53,9 @@
             <h2>Ingrédients</h2>
 
             <ul>
-                {#each recipe.ingredients as ingredient}
+                {#each recipe.ingredients as label, id}
                     <li>
-                        <Checkbox />
-                        <p>{ingredient}</p>
+                        <Checkbox {label} id="ingredient-{id}"/>
                     </li>
                 {/each}
             </ul>
@@ -173,13 +172,6 @@
     .ingredients > ul > li {
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .ingredients > ul > li > p {
-        margin-top: 0px;
-        margin-bottom: 5px;
-        margin-left: 10px;
     }
 
     .instructions > h2 {

@@ -1,11 +1,32 @@
 <!-- Checkbox.svelte -->
-<script>
-    export let checked = false;
+<script lang="ts">
+    import { onMount, onDestroy } from "svelte";
+
+    export let label: string = "Checkbox";
+    export let id: string;
+    let checked = false;
+    $: color = checked ? "rgb(120, 120, 120)" : "black";
+
+    const handleKeydown = (event: KeyboardEvent) => {
+        if (event.key === "Escape") {
+            checked = false;
+        }
+    };
+
+    onMount(async () => {
+        window.addEventListener("keydown", handleKeydown);
+
+        // Rest of your code
+    });
+
+    onDestroy(() => {
+        window.removeEventListener("keydown", handleKeydown);
+    });
 </script>
 
 <div class="checkbox-wrapper-30">
     <span class="checkbox">
-        <input type="checkbox" bind:checked />
+        <input type="checkbox" bind:checked {id} />
         <svg>
             <use xlink:href="#checkbox-30" class="checkbox"></use>
         </svg>
@@ -20,8 +41,19 @@
         </symbol>
     </svg>
 </div>
+<label for={id} style:color>{label}</label>
 
 <style>
+    * {
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+
+    label {
+        margin-left: 10px;
+        margin-bottom: 13px;
+        cursor: pointer;
+    }
     .checkbox-wrapper-30 .checkbox {
         --bg: #f3f3f3;
         --brdr: #d1d6ee;
@@ -44,6 +76,7 @@
     }
     .checkbox-wrapper-30 .checkbox input {
         -webkit-appearance: none;
+        appearance: none;
         -moz-appearance: none;
         -webkit-tap-highlight-color: transparent;
         cursor: pointer;
