@@ -2,8 +2,10 @@
     import { onMount } from "svelte";
     import { page } from "$app/stores";
     import type { Recipe } from "../../../types";
+    import Checkbox from "../../../lib/ui/checkbox.svelte";
 
     let recipe: Recipe = null;
+    let formattedDate: string = "";
 
     onMount(async () => {
         const { params } = $page;
@@ -12,6 +14,13 @@
         );
 
         recipe = await response.json();
+        if (recipe) {
+            formattedDate = new Intl.DateTimeFormat("fr-FR", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+            }).format(new Date(recipe.date));
+        }
     });
 </script>
 
@@ -45,7 +54,10 @@
 
             <ul>
                 {#each recipe.ingredients as ingredient}
-                    <li>{ingredient}</li>
+                    <li>
+                        <Checkbox />
+                        <p>{ingredient}</p>
+                    </li>
                 {/each}
             </ul>
         </div>
@@ -62,14 +74,12 @@
         <div class="notes">
             <h2>Notes</h2>
 
-            <ul>
-                {#each recipe.notes as note}
-                    <li>{note}</li>
-                {/each}
-            </ul>
+            {#each recipe.notes as note}
+                <p>{note}</p>
+            {/each}
         </div>
         <div class="footer">
-            <p>{recipe.date}</p>
+            <p>{formattedDate}</p>
         </div>
     </div>
 {:else}
@@ -92,44 +102,46 @@
         align-items: center;
     }
 
-    .recipe > div {
-        margin: 5px;
-        padding: 10px;
-    }
-
     .top {
+        margin-top: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 1px solid darkgrey;
-        border-radius: 3px;
     }
 
     .top > h1 {
+        width: 70%;
         font-size: 3em;
         margin-bottom: -10px;
         margin-top: -10px;
+        text-align: center;
+        border-bottom: 3px solid rgb(105, 105, 105);
     }
 
     .top > p {
         color: rgb(85, 85, 85);
+        margin-top: 25px;
+        margin-bottom: -2px;
     }
 
     .infos {
+        margin-top: 10px;
         display: flex;
         justify-content: center;
         width: 75%;
-        height: 100px;
+        height: 80px;
     }
 
     .infos > div {
         margin: 15px;
-        width: 15%;
+        min-width: 100px;
+        width: 20%;
         height: 70%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: rgb(211, 218, 220);
         border: 1px solid rgb(199, 199, 199);
         border-radius: 3px;
         box-shadow: 0px 0px 5px 0px rgb(199, 199, 199);
@@ -145,9 +157,65 @@
         font-size: 0.75em;
     }
 
+    .ingredients > h2 {
+        text-align: center;
+    }
+
+    .ingredients > ul {
+        width: 100%;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: left;
+    }
+
+    .ingredients > ul > li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .ingredients > ul > li > p {
+        margin-top: 0px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+    }
+
+    .instructions > h2 {
+        text-align: center;
+    }
+
+    .instructions > ol > li {
+        margin-bottom: 10px;
+        font-size: 0.9em;
+    }
+
+    .notes {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .notes > * {
+        margin: 5px;
+    }
+    .notes > h2 {
+        text-align: center;
+    }
+
+    .footer {
+        margin-top: 100px;
+        margin-bottom: 0px;
+        display: flex;
+        justify-content: center;
+        color: rgb(81, 81, 81);
+    }
+
     .bold {
         font-weight: bold;
         font-size: 1em;
     }
-
 </style>
