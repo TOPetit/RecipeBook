@@ -121,14 +121,15 @@
         color: rgb(85, 85, 85);
         margin-top: 25px;
         margin-bottom: -2px;
+        text-align: center;
     }
 
     .infos {
         margin-top: 10px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         width: 75%;
-        height: 80px;
     }
 
     .infos > div {
@@ -144,6 +145,11 @@
         border: 1px solid rgb(199, 199, 199);
         border-radius: 3px;
         box-shadow: 0px 0px 5px 0px rgb(199, 199, 199);
+        transition: transform 0.3s;
+    }
+
+    .infos > div:hover {
+        transform: scale(1.05);
     }
 
     .infos > div > p {
