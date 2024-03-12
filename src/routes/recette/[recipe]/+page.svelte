@@ -1,8 +1,9 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { page } from "$app/stores";
-    import type { Recipe } from "../../../types";
-    import Checkbox from "../../../lib/ui/checkbox.svelte";
+    import type { Recipe } from "$lib/types";
+    import Checkbox from "$lib/ui/checkbox.svelte";
+    import FluentOven48Regular from '~icons/fluent/oven-48-regular'
 
     let recipe: Recipe = null;
     let formattedDate: string = "";
@@ -40,6 +41,7 @@
                 <p class="info-mini">{recipe.cook_time}</p>
             </div>
             <div>
+                <FluentOven48Regular height={32} width={32}/>
                 <p class="bold">Total</p>
                 <p class="info-mini">{recipe.total_time}</p>
             </div>
