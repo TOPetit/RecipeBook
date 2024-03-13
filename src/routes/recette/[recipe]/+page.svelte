@@ -3,7 +3,7 @@
     import { page } from "$app/stores";
     import type { Recipe } from "$lib/types";
     import Checkbox from "$lib/ui/checkbox.svelte";
-    import FluentOven48Regular from '~icons/fluent/oven-48-regular'
+    import FluentOven48Regular from "~icons/fluent/oven-48-regular";
 
     let recipe: Recipe = null;
     let formattedDate: string = "";
@@ -33,21 +33,40 @@
         </div>
         <div class="infos">
             <div>
-                <p class="bold">Préparation</p>
-                <p class="info-mini">{recipe.prep_time}</p>
+                <div class="icon">
+                    <FluentOven48Regular height={32} width={32} />
+                </div>
+                <div class="infotext">
+                    <p class="bold">Préparation</p>
+                    <p class="info-mini">{recipe.prep_time}</p>
+                </div>
             </div>
             <div>
-                <p class="bold">Cuisson</p>
-                <p class="info-mini">{recipe.cook_time}</p>
+                <div class="icon">
+                    <FluentOven48Regular height={32} width={32} />
+                </div>
+                <div class="infotext">
+                    <p class="bold">Cuisson</p>
+                    <p class="info-mini">{recipe.cook_time}</p>
+                </div>
             </div>
             <div>
-                <FluentOven48Regular height={32} width={32}/>
-                <p class="bold">Total</p>
-                <p class="info-mini">{recipe.total_time}</p>
+                <div class="icon">
+                    <FluentOven48Regular height={32} width={32} />
+                </div>
+                <div class="infotext">
+                    <p class="bold">Total</p>
+                    <p class="info-mini">{recipe.total_time}</p>
+                </div>
             </div>
             <div>
-                <p class="bold">Portions</p>
-                <p class="info-mini">{recipe.servings}</p>
+                <div class="icon">
+                    <FluentOven48Regular height={32} width={32} />
+                </div>
+                <div class="infotext">
+                    <p class="bold">Portions</p>
+                    <p class="info-mini">{recipe.servings}</p>
+                </div>
             </div>
         </div>
 
@@ -57,7 +76,7 @@
             <ul>
                 {#each recipe.ingredients as label, id}
                     <li>
-                        <Checkbox {label} id="ingredient-{id}"/>
+                        <Checkbox {label} id="ingredient-{id}" />
                     </li>
                 {/each}
             </ul>
@@ -105,6 +124,7 @@
 
     .top {
         margin-top: 20px;
+        margin-bottom: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -131,17 +151,22 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        width: 75%;
+        width: 70%;
+        gap: 40px;
+        row-gap: 5px;
+    }
+
+    .infos > div >.icon {
+        margin: 5px;
+        padding-top: 4px;
     }
 
     .infos > div {
-        margin: 15px;
-        min-width: 100px;
-        width: 20%;
+        min-width: 70px;
         height: 70%;
+        padding-right: 10px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         background-color: rgb(211, 218, 220);
         border: 1px solid rgb(199, 199, 199);
@@ -154,14 +179,25 @@
         transform: scale(1.05);
     }
 
-    .infos > div > p {
+    .infotext {
         text-align: center;
-        margin-top: 1px;
-        margin-bottom: 5px;
+    }
+
+    .infotext > p {
+        margin: 0;
     }
 
     .info-mini {
         font-size: 0.75em;
+    }
+
+    .ingredients {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .ingredients > h2 {
@@ -169,7 +205,8 @@
     }
 
     .ingredients > ul {
-        width: 100%;
+        width: 90%;
+        padding-left: 5px;
         list-style-type: none;
         display: flex;
         flex-direction: column;
@@ -184,6 +221,10 @@
 
     .instructions > h2 {
         text-align: center;
+    }
+
+    .instructions > ol {
+        padding-left: 10px;
     }
 
     .instructions > ol > li {
@@ -206,12 +247,22 @@
         text-align: center;
     }
 
+    .notes > p {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
     .footer {
         margin-top: 100px;
         margin-bottom: 0px;
         display: flex;
         justify-content: center;
         color: rgb(81, 81, 81);
+    }
+
+    .footer > p {
+        text-align: center;
+        font-size: 0.8rem;
     }
 
     .bold {
