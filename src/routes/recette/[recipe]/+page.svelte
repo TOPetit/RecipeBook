@@ -3,7 +3,8 @@
     import { page } from "$app/stores";
     import type { Recipe } from "$lib/types";
     import Checkbox from "$lib/ui/checkbox.svelte";
-    import FluentOven48Regular from "~icons/fluent/oven-48-regular";
+    import Icon from "$lib/ui/icon.svelte";
+    
 
     let recipe: Recipe = null;
     let formattedDate: string = "";
@@ -34,7 +35,7 @@
         <div class="infos">
             <div>
                 <div class="icon">
-                    <FluentOven48Regular height={32} width={32} />
+                    <Icon name="delete" width="32px" height="32px" />
                 </div>
                 <div class="infotext">
                     <p class="bold">Préparation</p>
@@ -43,7 +44,6 @@
             </div>
             <div>
                 <div class="icon">
-                    <FluentOven48Regular height={32} width={32} />
                 </div>
                 <div class="infotext">
                     <p class="bold">Cuisson</p>
@@ -52,7 +52,6 @@
             </div>
             <div>
                 <div class="icon">
-                    <FluentOven48Regular height={32} width={32} />
                 </div>
                 <div class="infotext">
                     <p class="bold">Total</p>
@@ -61,7 +60,6 @@
             </div>
             <div>
                 <div class="icon">
-                    <FluentOven48Regular height={32} width={32} />
                 </div>
                 <div class="infotext">
                     <p class="bold">Portions</p>
