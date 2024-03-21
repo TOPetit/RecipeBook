@@ -35,7 +35,7 @@
         <div class="infos">
             <div>
                 <div class="icon">
-                    <Icon name="delete" width="32px" height="32px" />
+                    <Icon name="chefhat" width="32px" height="32px" color="rgb(70, 70, 70)" />
                 </div>
                 <div class="infotext">
                     <p class="bold">Préparation</p>
@@ -44,6 +44,7 @@
             </div>
             <div>
                 <div class="icon">
+                    <Icon name="oven" width="28px" height="28px" color="rgb(70, 70, 70)" />
                 </div>
                 <div class="infotext">
                     <p class="bold">Cuisson</p>
@@ -52,6 +53,7 @@
             </div>
             <div>
                 <div class="icon">
+                    <Icon name="time" width="24px" height="24px" color="rgb(70, 70, 70)"/>
                 </div>
                 <div class="infotext">
                     <p class="bold">Total</p>
@@ -156,11 +158,15 @@
 
     .infos > div >.icon {
         margin: 5px;
-        padding-top: 4px;
+        padding-left: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .infos > div {
         min-width: 70px;
+        min-height: 50px;
         height: 70%;
         padding-right: 10px;
         display: flex;
