@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { page } from "$app/stores";
     import type { Recipe } from "$lib/types";
+    import { fetchRecipe } from "$lib/func/fetchRecipe";
     import Checkbox from "$lib/ui/checkbox.svelte";
     import Icon from "$lib/ui/icon.svelte";
     
@@ -11,11 +12,7 @@
 
     onMount(async () => {
         const { params } = $page;
-        const response = await fetch(
-            `https://raw.githubusercontent.com/TOPetit/RecipeBook/main/recipes/${params.recipe}.json`,
-        );
-
-        recipe = await response.json();
+        recipe = await fetchRecipe(params.recipe);
         if (recipe) {
             formattedDate = new Intl.DateTimeFormat("fr-FR", {
                 day: "2-digit",

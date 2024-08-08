@@ -1,1 +1,5 @@
-<h1>Hello</h1>
+<script lang="ts">
+    import RecipeCard from "$lib/components/RecipeCard.svelte"
+</script>
+
+<RecipeCard recipeName="brownies"/>
