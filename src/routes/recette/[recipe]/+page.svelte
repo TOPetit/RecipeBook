@@ -5,7 +5,6 @@
     import { fetchRecipe } from "$lib/func/fetchRecipe";
     import Checkbox from "$lib/ui/checkbox.svelte";
     import Icon from "$lib/ui/icon.svelte";
-    
 
     let recipe: Recipe = null;
     let formattedDate: string = "";
@@ -32,7 +31,12 @@
         <div class="infos">
             <div>
                 <div class="icon">
-                    <Icon name="chefhat" width="32px" height="32px" color="rgb(70, 70, 70)" />
+                    <Icon
+                        name="chefhat"
+                        width="32px"
+                        height="32px"
+                        color="rgb(70, 70, 70)"
+                    />
                 </div>
                 <div class="infotext">
                     <p class="bold">Préparation</p>
@@ -41,7 +45,12 @@
             </div>
             <div>
                 <div class="icon">
-                    <Icon name="oven" width="28px" height="28px" color="rgb(70, 70, 70)" />
+                    <Icon
+                        name="oven"
+                        width="28px"
+                        height="28px"
+                        color="rgb(70, 70, 70)"
+                    />
                 </div>
                 <div class="infotext">
                     <p class="bold">Cuisson</p>
@@ -50,7 +59,12 @@
             </div>
             <div>
                 <div class="icon">
-                    <Icon name="time" width="24px" height="24px" color="rgb(70, 70, 70)"/>
+                    <Icon
+                        name="time"
+                        width="24px"
+                        height="24px"
+                        color="rgb(70, 70, 70)"
+                    />
                 </div>
                 <div class="infotext">
                     <p class="bold">Total</p>
@@ -58,8 +72,7 @@
                 </div>
             </div>
             <div>
-                <div class="icon">
-                </div>
+                <div class="icon"></div>
                 <div class="infotext">
                     <p class="bold">Portions</p>
                     <p class="info-mini">{recipe.servings}</p>
@@ -153,7 +166,7 @@
         row-gap: 5px;
     }
 
-    .infos > div >.icon {
+    .infos > div > .icon {
         margin: 5px;
         padding-left: 4px;
         display: flex;
