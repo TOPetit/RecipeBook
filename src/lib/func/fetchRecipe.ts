@@ -7,6 +7,8 @@ export async function fetchRecipe(recipeName: String): Promise<Recipe> {
     if (!response.ok) {
         throw new Error(response.statusText);
     }
-    const data = await response.json();
+    let data = await response.json();
+    data.imageURL = `https://raw.githubusercontent.com/TOPetit/RecipeBook/main/images/${recipeName}.jpg`;
+    console.log(data);
     return data;
 }

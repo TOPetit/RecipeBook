@@ -10,4 +10,5 @@ export type Recipe = null | {
     ingredients: string[];
     instructions: string[];
     notes: string[];
+    imageURL: string;
 };

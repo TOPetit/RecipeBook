@@ -1,6 +1,10 @@
 {
     "$id": "recipe.json",
     "title": "Recipe json object",
+    "image": {
+        "author": "Michelle Tsang",
+        "link": "https://unsplash.com/@petitesweetsnz"
+    },
     "type": "object",
     "properties": {
         "title": {
